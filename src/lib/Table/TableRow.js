@@ -1,9 +1,11 @@
-import { html } from "svelite-html"
+import { component, html } from "svelite-html"
 
-export default (props = {}) => {
-    return html`
-        <tr class="border-b dark:border-gray-700">
-            ${props.body}
-        </tr>
-    `
-}
+export default component({
+    template: (props = {}, slot) => {
+        return html`
+            <tr class="border-b dark:border-gray-700">
+                ${slot}
+            </tr>
+        `
+    }
+})

@@ -1,10 +1,11 @@
-import { html } from "svelite-html"
+import { component, html } from "svelite-html"
 
-export default (props = {}) => {
-    return html`
-        <td class="px-4 py-3 whitespace-nowrap ${props.class}">
-            ${ props.body }
-        </td>
-    
-    `
-}
+export default component({
+    template: (props = {}, slot) => {
+        return html`
+            <td class="px-4 py-3 whitespace-nowrap ${props.class}">
+                ${ slot }
+            </td>
+        `
+    }
+})
